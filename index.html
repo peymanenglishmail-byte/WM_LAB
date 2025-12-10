@@ -310,6 +310,7 @@
       if (receivedTopic === topic) {
         try {
           const data = JSON.parse(message.toString());
+          console.log(data);
           // console.log(data);
           if ("string_tR" in data) string_testRunning = data.string_testRunning;
           if ("string_cUp" in data) string_cylinderUp = data.string_cylinderUp;
