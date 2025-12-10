@@ -311,14 +311,14 @@
         try {
           const data = JSON.parse(message.toString());
           console.log(data);
-          if ("string_testRunning" in data) string_testRunning = data.string_testRunning;
-          if ("string_cylinderUp" in data) string_cylinderUp = data.string_cylinderUp;
-          if ("string_totalCycles" in data) string_totalCycles = data.string_totalCycles;
-          if ("string_currentCycle" in data) string_currentCycle = data.string_currentCycle;
-          if ("string_forwardDuration" in data) string_forwardDuration = data.string_forwardDuration;
-          if ("string_backwardDuration" in data) string_backwardDuration = data.string_backwardDuration;
-          if ("string_stations" in data && Array.isArray(data.string_stations)) string_stations = data.string_stations;
-          if ("string_errorMessage" in data) string_errorMessage = data.string_errorMessage;
+          if ("string_tR" in data) string_testRunning = data.string_testRunning;
+          if ("string_cUp" in data) string_cylinderUp = data.string_cylinderUp;
+          if ("string_totC" in data) string_totalCycles = data.string_totalCycles;
+          if ("string_curC" in data) string_currentCycle = data.string_currentCycle;
+          if ("string_fwd" in data) string_forwardDuration = data.string_forwardDuration;
+          if ("string_bwd" in data) string_backwardDuration = data.string_backwardDuration;
+          if ("string_sts" in data && Array.isArray(data.string_stations)) string_stations = data.string_stations;
+          if ("string_err" in data) string_errorMessage = data.string_errorMessage;
           updateUI();
         } catch (err) {
           console.error("Invalid JSON:", message.toString());
