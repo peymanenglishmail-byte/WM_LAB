@@ -192,8 +192,8 @@
   <h2>Tab 3</h2>
   <p>Reserved for future monitoring.</p>
 </div>
-<script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
   
+<script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
 <script>
   // --- Tab switching ---
   function openTab(evt, tabName) {
@@ -286,7 +286,6 @@
       }
     });
   }
-
   // --- MQTT Setup ---
   const broker = "wss://test.mosquitto.org:8081"; // secure WebSocket port
   const topic = "esp32/peyman/test";
@@ -295,7 +294,6 @@
   function initMQTT() {
     console.log("Connecting to MQTT broker...");
     client = mqtt.connect(broker);
-
     client.on("connect", () => {
       console.log("Connected to MQTT broker");
       client.subscribe(topic, (err) => {
@@ -308,9 +306,7 @@
     });
 
     client.on("message", (receivedTopic, message) => {
-          console.log("here1");
       if (receivedTopic === topic) {
-         console.log("here2");
         try {
           const data = JSON.parse(message.toString());
           console.log("here3");
@@ -322,7 +318,6 @@
           if ("string_backwardDuration" in data) string_backwardDuration = data.string_backwardDuration;
           if ("string_stations" in data && Array.isArray(data.string_stations)) string_stations = data.string_stations;
           if ("string_errorMessage" in data) string_errorMessage = data.string_errorMessage;
-
           updateUI();
         } catch (err) {
           console.error("Invalid JSON:", message.toString());
@@ -339,11 +334,7 @@
       setTimeout(initMQTT, 3000);
     });
   }
-
-
-
   // --- Initialize ---
-
   window.addEventListener("load", () => {
   try {
     initMQTT();
@@ -352,8 +343,6 @@
   }
   updateUI();
 });
-
-
 </script>
 </body>
 </html>
