@@ -319,6 +319,7 @@
           if ("string_fwd" in data) string_forwardDuration = data.string_fwd;
           if ("string_bwd" in data) string_backwardDuration = data.string_bwd;
           if ("string_sts" in data && Array.isArray(data.string_sts)) string_stations = data.string_sts;
+          console.log(string_stations);
           if ("string_err" in data) string_errorMessage = data.string_err;
           updateUI();
         } catch (err) {
