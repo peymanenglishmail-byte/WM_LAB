@@ -228,19 +228,19 @@
     }
 
     const errorPanel = document.querySelector(".error-panel");
-    const errorLabel = document.getElementById("errorLabel");
-    if (errorPanel && errorLabel) {
+    const string_errorLabel = document.getElementById("string_errorLabel");
+    if (errorPanel && string_errorLabel) {
       if (string_errorMessage == 0) {
         errorPanel.style.display = "none";
       } else {
         errorPanel.style.display = "flex";
         switch(string_errorMessage) {
-          case 1: errorLabel.textContent = "Station 1 detached"; break;
-          case 2: errorLabel.textContent = "Station 2 detached"; break;
-          case 3: errorLabel.textContent = "Station 3 detached"; break;
-          case 4: errorLabel.textContent = "Station 4 detached"; break;
-          case 5: errorLabel.textContent = "Station 5 detached"; break;
-          default: errorLabel.textContent = "Unknown Error";
+          case 1: string_errorLabel.textContent = "Station 1 detached"; break;
+          case 2: string_errorLabel.textContent = "Station 2 detached"; break;
+          case 3: string_errorLabel.textContent = "Station 3 detached"; break;
+          case 4: string_errorLabel.textContent = "Station 4 detached"; break;
+          case 5: string_errorLabel.textContent = "Station 5 detached"; break;
+          default: string_errorLabel.textContent = "Unknown Error";
         }
       }
     }
